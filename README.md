@@ -1,2 +1,2 @@
 # Credit_card_fruad
-Detect credit cart fraud
+Detect credit card fraud
