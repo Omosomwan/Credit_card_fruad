@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box {
+            border: 2px solid #000;
+            width: 600px;
+            margin: 0 auto;          /* centers the box horizontally */
+            padding: 5px;
+            text-align: center;
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        label {
+            width: 180px;
+            text-align: right;
+            margin-right: 10px;
+            
+        }
+        input {
+            flex: 1;
+            height: 20px;
+            border-radius: 5px;
+            padding: 8px;
+            margin-right: 30px;
+        }
+        button {
+            width: 100px;
+            height: 50px;
+            background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Credit Card Fraud Prediction</h1>
+        <form action="/predict" method="POST">
+            <div class="form-row">
+                <label for="amount">Amount:</label>
+                <input type="number" name="amount"  required>
+            </div>
+            <div class="form-row">
+                <label for="transaction_hour">Transaction hour:</label>
+                <input type="number" name="transaction_hour" required>
+            </div>
+            <div class="form-row">
+                <label for="foreign_transaction">Foreign transaction:</label>
+                <input type="number" name="foreign_transaction" required>
+            </div>
+            <div class="form-row">
+                <label for="location_mismatch">Location mismatch:</label>
+                <input type="number" name="location_mismatch" required min = 0 max =1>
+            </div>
+            <div class="form-row">
+                <label for="device_trust_score">Device trust score:</label>
+                <input type="number" name="device_trust_score" required>
+            </div>
+            <div class="form-row">
+                <label for="velocity_last_24h">Velocity last 24h:</label>
+                <input type="number" name="velocity_last_24h" required>
+            </div>
+            <div class="form-row">
+                <label for="cardholder_age">Cardholder age:</label>
+                <input type="number" name="cardholder_age" required>
+            </div>
+            
+            <button type="submit"><b>Predict</b></button>
+             <div class="form-row">
+                <b>Class:</b> {{result}}
+        </form>
+    </div>
+</body>
+</html>
+    
+
+
+
+
+
